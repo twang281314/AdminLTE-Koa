@@ -1,0 +1,27 @@
+{
+  "name": "adminlte-koa",
+  "version": "1.0.0",
+  "description": "adminlte  koa",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twang281314/AdminLTE-Koa.git"
+  },
+  "keywords": [
+    "koa",
+    "adminlte"
+  ],
+  "author": "anytao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/twang281314/AdminLTE-Koa/issues"
+  },
+  "homepage": "https://github.com/twang281314/AdminLTE-Koa#readme",
+  "dependencies": {
+    "koa": "^1.2.4",
+    "koa-router": "^5.4.0"
+  }
+}
