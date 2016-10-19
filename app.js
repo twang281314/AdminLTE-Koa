@@ -1,14 +1,24 @@
 const koa = require('koa');
-const router = require('koa-router')();
+const logger = require('koa-logger');
+const handlebars = require("koa-handlebars");
+const responseTime = require('koa-response-time');
 
 const app = koa();
+const routes = require('./routes')
 
-router.get('/', function*(next) {
-    this.body = 'app  is start';
-});
+app.use(responseTime());
+app.use(logger());
+app.use(require('koa-static')(__dirname + '/public'));
+app.use(handlebars({
+    cache: false,
+    extension: 'html',
+    viewsDir: 'views',
+    layoutsDir:'views/layouts',
+    partialsDir: 'views/partials'
+}));
 
-app.use(router.routes());
+app.use(routes.routes());
 
-app.listen(3000, function() {
+app.listen(3000, function () {
     console.log('koa listening on port 3000 ');
 });
